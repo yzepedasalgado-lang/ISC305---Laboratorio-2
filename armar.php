@@ -24,19 +24,19 @@
             <div class="collapse navbar-collapse" id="menuNavegacion">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link px-3 fw-bold" style="color:#24485C;" href="index.html">Inicio</a>
+                        <a class="nav-link px-3 fw-bold" style="color:#24485C;" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="catalogo.html">Menú</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="catalogo.php">Menú</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="armar.html">Arma tu Pizza</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="armar.php">Arma tu Pizza</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.html">Pedidos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.php">Pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="contacto.html">Contáctanos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="contacto.php">Contáctanos</a>
                     </li>
                 </ul>
             </div>
