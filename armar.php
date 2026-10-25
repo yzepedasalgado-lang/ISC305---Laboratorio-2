@@ -88,7 +88,7 @@
                             <select name="salsa" class="form-select">
                                 <option value="Pomodoro clásica" selected>Pomodoro clásica</option>
                                 <option value="Salsa blanca Alfredo">Salsa blanca Alfredo</option>
-                                <option value="Pesto genovés">Pesto genovés</option>
+                                <option value="Salsa Pesto">Salsa Pesto </option>
                                 <option value="Barbacoa dulce">Barbacoa dulce</option>
                             </select>
                         </div>
@@ -97,7 +97,7 @@
                             <label class= "form-label fw-bold">2.Seleccione queso : </label>
                             <select name="queso" class="form-select">
                                 <option value="Mozzarella fresco" selected>Mozzarella fresco</option>
-                                <option value="Queso parmesano reggiano">Queso parmesano reggiano</option>
+                                <option value="Queso parmesano">Queso parmesano </option>
                                 <option value="Queso provolone">Queso provolone</option>
                             </select>
                         </div>
