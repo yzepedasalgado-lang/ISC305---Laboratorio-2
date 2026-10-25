@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm py-3" style="background-color: #62C4C3;">
         <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.html" style="color:#24485C;">
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.php" style="color:#24485C;">
                 <i class="bi bi-fire me-2"></i>
                 <span class="me-2">Pizzería Bella Nápoli</span>
                 <span class="badge" style="background-color: #F8E6CB; color:#24485C;">Corazón Catracho</span>
@@ -24,19 +24,19 @@
             <div class="collapse navbar-collapse" id="menuNavegacion">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link px-3 fw-bold" style="color:#24485C;" href="index.html">Inicio</a>
+                        <a class="nav-link px-3 fw-bold" style="color:#24485C;" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="catalogo.html">Menú</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="catalogo.php">Menú</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="armar.html">Arma tu Pizza</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="armar.php">Arma tu Pizza</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.html">Pedidos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.php">Pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="contacto.html">Contáctanos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="contacto.php">Contáctanos</a>
                     </li>
                 </ul>
             </div>
