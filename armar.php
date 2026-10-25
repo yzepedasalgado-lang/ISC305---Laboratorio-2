@@ -44,6 +44,130 @@
         </div>
     </nav>
 
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0 rounded-4 p-4">
+                    <div class= "text-center mb-4">
+                        <span class="badge rounded-pill px-3 py-2 text-uppercase fw-bold" style="background-color:#62C4C3; color:#24485C;">Módulo Interactivo</span>
+                        <h1 class="h2 fw-bold mt-2" style="color:#24485C;">Arma tu Pizza a Medida</h1>
+                        <p class="small text-muted" style="color:#24485C !important;">Selecciona cada elemento para construir tu creación.</p>
+                    </div>
+
+                    <form action="pedidos.php" metho="POST">
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">1. Seleccione el tamaño de la pizza:</label>
+                            <select name="tamano" class="form-select" required>
+                                <option value="Personal">Personal (8") - L. 120.00 </option>
+                                <option value="Mediana" selected> Mediana (12") - L. 220.00 </option>
+                                <option value="Familiar"> Familiar (16") - L.320.00 </option>
+                                <option value="Gigante"> Gigante (20") - L.420.00 </option>
+                                </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class= "form-label fw-bold">2.Seleccione un tipo de masa: </label>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="masa" id="masa1" value="Tradicional italiana" checked>
+                                   <label class="form-check-label" for="masa1">Tradicional italiana </label>
+                                </div>
+                               <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="masa" id="masa2" value="Delgada y crujiente">
+                                  <label class="form-check-label" for="masa2">Delgada y crujiente </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="masa" id="masa3" value="Orilla rellena de queso">
+                                    <label class="form-check-label" for="masa3">Orilla rellena de queso (Con recargo adicional) </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class= "form-label fw-bold">2.Seleccione su salsa base: </label>
+                            <select name="salsa" class="form-select">
+                                <option value="Pomodoro clásica" selected>Pomodoro clásica</option>
+                                <option value="Salsa blanca Alfredo">Salsa blanca Alfredo</option>
+                                <option value="Pesto genovés">Pesto genovés</option>
+                                <option value="Barbacoa dulce">Barbacoa dulce</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class= "form-label fw-bold">2.Seleccione queso : </label>
+                            <select name="queso" class="form-select">
+                                <option value="Mozzarella fresco" selected>Mozzarella fresco</option>
+                                <option value="Queso parmesano reggiano">Queso parmesano reggiano</option>
+                                <option value="Queso provolone">Queso provolone</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">5. Ingredientes Adicionales (L. 25.00 c/u):</label>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Pepperoni" id="ing1">
+                                        <label class="form-check-label" for="ing1">Pepperoni (L. 25.00)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Jamón de pavo" id="ing2">
+                                        <label class="form-check-label" for="ing2">Jamón de pavo (L. 25.00)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Jamon de cerdo" id="ing3">
+                                        <label class="form-check-label" for="ing3">Jamon de cerdo(L. 25.00)</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Aceitunas" id="ing4">
+                                        <label class="form-check-label" for="ing4">Aceitunas  (L. 25.00)</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Hongos" id="ing5">
+                                        <label class="form-check-label" for="ing5">Hongos (L. 25.00)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Albahaca fresca" id="ing6">
+                                        <label class="form-check-label" for="ing6">Albahaca fresca (L. 25.00)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Tocino" id="ing7">
+                                        <label class="form-check-label" for="ing7">Tocino  (L. 25.00)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ingredientes[]" value="Extra queso" id="ing8">
+                                        <label class="form-check-label" for="ing8"> Extra queso (L. 25.00)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">6. Cantidad de Pizzas:</label>
+                            <input type="number" name="cantidad" class="form-control" value="1" min="1" required>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-lg fw-bold px-5 rounded-pill shadow" style="background-color:#24485C; color:#F8E6CB;">
+                                <i class="bi bi-arrow-right-circle"></i> Enviar orden
+                            </button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer class="py-5 mt-auto border-top" style="background-color:#24485C; color:#F8E6CB;">
         <div class="container">
