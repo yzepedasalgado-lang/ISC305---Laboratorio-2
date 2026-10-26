@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vaciar'])){
+    unset($_SESSION['pedidos']);
+    header('Location: contacto.php');
+    exit;
+}
+
+$pedidos  = $_SESSION['pedidos'] ?? [];
+$sucursales=[
+    [
+    'nombre' => 'sucursal Tegucigalpa',
+    'direccion' => 'Boulevard Morazan, Tegucigalpa, Francisco Morazan',
+    'telefono' => '+504 2280-2230',
+    'horario' => 'Lunes a jueves de 8 am a 9 pm',
+    'icono' => 'bi-building'
+],  
+[
+    'nombre' => 'Sucursal San pedro sula',
+    'direccion' => 'Barrio Guamilito, san pedro sula, cortez',
+    'telefono' => '+504 2210-9210',
+    'horario' => 'Lunes a jueves de 8 am a 9 pm',
+    'icono' => 'bi-shop'
+],
+[
+    'nombre' => 'Sucursal La ceiba',
+    'direccion' => 'centro de la ceiba, Atlantida',
+    'telefono' => '+504 2200-2960',
+    'horario' => 'Lunes a jueves de 8 am a 9 pm',
+    'icono' => 'bi-geo-alt'
+]
+];
+function e($valor)
+{
+ return htmlspecialchars((string)$valor, ENT_QUOTES,'UTF-8');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +49,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm py-3" style="background-color: #62C4C3;">
         <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.html" style="color:#24485C;">
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.php" style="color:#24485C;">
                 <i class="bi bi-fire me-2"></i>
                 <span class="me-2">Pizzería Bella Nápoli</span>
                 <span class="badge" style="background-color: #F8E6CB; color:#24485C;">Corazón Catracho</span>
@@ -24,25 +62,107 @@
             <div class="collapse navbar-collapse" id="menuNavegacion">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link px-3 fw-bold" style="color:#24485C;" href="index.html">Inicio</a>
+                        <a class="nav-link px-3 fw-bold" style="color:#24485C;" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="catalogo.html">Menú</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="catalogo.php">Menú</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="armar.html">Arma tu Pizza</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="armar.php">Arma tu Pizza</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.html">Pedidos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.php">Pedidos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="contacto.html">Contáctanos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="contacto.php">Contáctanos</a>
                     </li>
                 </ul>
             </div>
 
         </div>
     </nav>
+
+
+ <div class="container my-5">
+        <div class="text-center mb-5">
+        <span class="badge rounded-pill px-3 py-2 text-uppercase fw-bold" style="background-color:#62C4C3; color:#24485C;">Estamos cerca de ti</span>
+        <h1 class="h2 fw-bold mt-2">Nuestras Sucursales</h1>
+        <p class="small">Visítanos o llámanos en cualquiera de nuestras sedes en Honduras</p>
+        </div>
+
+    <div class="row g-4 mb-5">
+        <?php foreach ($sucursales as $sucursal): ?>
+            <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow border-0 rounded-4">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi <?= e($sucursal['icono']) ?> fs-2 me-3" style="color:#62C4C3;"></i>
+                     <h2 class="h5 fw-bold mb-0"><?= e($sucursal['nombre']) ?></h2>
+                    </div>
+                    <p class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i><?= e($sucursal['direccion']) ?></p>
+                    <p class="mb-2"><i class="bi bi-telephone-fill me-2"></i><?= e($sucursal['telefono']) ?></p>
+                    <p class="mb-0"><i class="bi bi-clock-fill me-2"></i><?= e($sucursal['horario']) ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="card shadow border-0 rounded-4 p-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+        <h2 class="h4 fw-bold mb-0"><i class="bi bi-clipboard-data me-2"></i>Panel de ordenes en Sesión</h2>
+        <?php if (!empty($pedidos)): ?>
+        <form method="POST" action="contacto.php" onsubmit="return confirm('¿Seguro que deseas vaciar todos los pedidos de la sesión?');">
+            <button type="submit" name="vaciar" value="1" class="btn fw-bold rounded-pill px-4" style="background-color:#24485C; color:#F8E6CB;">
+                <i class="bi bi-trash3"></i> Vaciar / Reiniciar Sesión
+            </button>
+        </form>
+        <?php endif; ?>
+    </div>
+
+    <?php if (empty($pedidos)): ?>
+        <div class="alert alert-warning d-flex align-items-center mb-0" role="alert">
+            <span class="badge text-bg-warning me-3">Sin pedidos</span>
+            <div>Aun no se han registrado órdenes durante esta sesión.</div>
+        </div>
+     <?php else: ?>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle mb-0">
+                <thead style="background-color:#24485C; color:#F8E6CB;">
+                    <tr>
+                        <th>Folio</th>
+                        <th>Cliente</th>
+                        <th>Telefono</th>
+                        <th>Detalle de Pizzas</th>
+                        <th class="text-end">Total en Lempiras</th>
+                        <th>Estado</th>
+                    </tr>
+                 </thead>
+        <tbody>
+            <?php foreach ($pedidos as $orden): ?>
+                <?php
+                $detalle = $orden['detalle'] ?? '';
+                if (is_array($detalle)) {
+                     $detalle = implode(', ', $detalle);
+                }
+                $estado = $orden['estado'] ?? 'Recibido';
+                    $total = (float)($orden['total'] ?? 0);
+                        ?>
+                    <tr>
+                        <td class="fw-bold"><?= e($orden['folio'] ?? '') ?></td>
+                        <td><?= e($orden['cliente'] ?? '') ?></td>
+                        <td><?= e($orden['telefono'] ?? '') ?></td>
+                        <td><?= e($detalle) ?></td>
+                        <td class="text-end fw-bold">L. <?= number_format($total, 2) ?></td>
+                        <td><span class="badge rounded-pill" style="background-color:#62C4C3; color:#24485C;"><?= e($estado) ?></span></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
     
 
     <footer class="py-5 mt-auto border-top" style="background-color:#24485C; color:#F8E6CB;">
