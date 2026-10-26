@@ -60,7 +60,7 @@
                         Masa fermentada 48 horas, ingredientes frescos y receta napolitana tradicional. Masa artesanal, sabor de Italia.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a class="btn btn-lg rounded-pill px-4 fw-bold" style="background-color:#24485C; color:#F8E6CB; border:2px solid #24485C;" href="facturacion.html">
+                        <a class="btn btn-lg rounded-pill px-4 fw-bold" style="background-color:#24485C; color:#F8E6CB; border:2px solid #24485C;" href="facturacion.php">
                             <i class="bi bi-bag-check-fill"></i> Ordena Ya
                         </a>
                         <a class="btn btn-lg rounded-pill px-4 fw-bold" style="background-color:transparent; color:#24485C; border:2px solid #24485C;" href="#estrellas">
