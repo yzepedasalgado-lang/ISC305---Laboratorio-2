@@ -33,7 +33,7 @@
                         <a class="nav-link px-3" style="color:#24485C;" href="armar.php">Arma tu Pizza</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="color:#24485C;" href="pedidos.php">Pedidos</a>
+                        <a class="nav-link px-3" style="color:#24485C;" href="facturacion.php">Pedidos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3" style="color:#24485C;" href="contacto.php">Contáctanos</a>
