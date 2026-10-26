@@ -54,7 +54,7 @@
                         <p class="small text-muted" style="color:#24485C !important;">Selecciona cada elemento para construir tu creación.</p>
                     </div>
 
-                    <form action="pedidos.php" metho="POST">
+                    <form action="facturacion.php" method="POST">
                         <div class="mb-4">
                             <label class="form-label fw-bold">1. Seleccione el tamaño de la pizza:</label>
                             <select name="tamano" class="form-select" required>
